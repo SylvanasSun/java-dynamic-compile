@@ -1,13 +1,22 @@
-### Java-Dynamic-Compile
+package com.sylvanas.java.dynamic.compile.test;
 
-在内存中动态编译Java代码.
+import com.sylvanas.java.dynamic.compile.JavaStringDynamicCompiler;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.Assert.*;
 
-将String当成源码,它可以输出byte[]作为class的内容并动态生成类.
+import java.lang.reflect.Method;
+import java.util.Map;
 
-### Example
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
-```java
-JavaStringDynamicCompiler compiler;
+/**
+ * Created by SylvanasSun on 2017/2/12.
+ */
+public class JavaStringDynamicCompilerTest {
+
+    JavaStringDynamicCompiler compiler;
 
     @Before
     public void setUp() {
@@ -34,4 +43,4 @@ JavaStringDynamicCompiler compiler;
         int mResult = (int) m.invoke(multiply.newInstance(), 2, 2);
         assertEquals(mResult, 4);
     }
-```
+}
